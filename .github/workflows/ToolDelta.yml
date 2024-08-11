@@ -13,3 +13,4 @@ jobs:
         run: |
           echo "目录$PWD"
           find /home -name "Dockerfile"
+          cat /home/runner/.nvm/Dockerfile
