@@ -12,4 +12,4 @@ jobs:
       - name: Build the Docker image
         run: |
           echo "目录$PWD"
-          find / -name "README.md"
+          find / -name "Dockerfile"
