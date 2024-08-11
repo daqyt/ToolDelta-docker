@@ -13,7 +13,7 @@ jobs:
     steps:
       - name: Build the Docker image
         run: |
-          echo -e "FROM python:3.12-slim\nENV TZ Asia/Shanghai\nENV PYTHONPATH=/workspace\n\nRUN pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple ToolDelta\nRUN mkdir -p /workspace\nRUN echo \"#!/bin/sh \\\necho \"开始更新ToolDelta\" \\\npip install -i https://pypi.tuna.tsinghua.edu.cn/simple --upgrade ToolDelta \\\necho \"ToolDelta更新完成\" \\\necho \"ToolDelta 启动!\" \\\npython -c \"from tooldelta.launch_options import client_title; client_title()\"\" >/td;\nRUN chmod +x /td\nWORKDIR /workspace\nENTRYPOINT [\"/td\"]" > Dockerfile
+          ls
           docker version
           # 登录阿里云镜像仓库
           docker login --username=${{ secrets.DOCKER_USERNAME }} --password=${{ secrets.DOCKER_PASSWORD }} registry.cn-hangzhou.aliyuncs.com
