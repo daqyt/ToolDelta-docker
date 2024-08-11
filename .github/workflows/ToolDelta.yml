@@ -13,6 +13,7 @@ jobs:
     steps:
       - name: Build the Docker image
         run: |
+          echo "目录$PWD"
           ls
           docker version
           # 登录阿里云镜像仓库
