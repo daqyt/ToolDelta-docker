@@ -16,7 +16,7 @@ done
 }
 if [ ! -d "./ToolDelta" ];then
 echo "开始下载ToolDelta"
-da
+#da
 fi
 if ["$tdv" -ne "$(./ToolDelta -v)"]; then
 echo "发现最新版本，开始更新"
