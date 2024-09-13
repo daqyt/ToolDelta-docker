@@ -13,7 +13,7 @@ until curl "$gitclone/ToolDelta-Basic/ToolDelta/releases/download/$tdv/ToolDelta
     *)gitclone="https://github.com/";N=0
   esac
 done
-RUN chmod +x ./ToolDelta
+chmod +x ./ToolDelta
 }
 if [ ! -d "./ToolDelta" ];then
 echo "开始下载ToolDelta"
