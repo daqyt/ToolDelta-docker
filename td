@@ -1,4 +1,4 @@
-#!/bin/sh 
+#!/bin/bash 
 echo "开始检测ToolDelta更新" 
 tdv="$(curl http://222.187.254.86:5244/d/ToolDelta-Basic/ToolDelta/main/version)" 
 function da(){
