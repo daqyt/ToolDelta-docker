@@ -5,4 +5,4 @@ RUN apt update && apt install curl -y
 COPY td /
 RUN chmod +x /td
 WORKDIR /workspace
-ENTRYPOINT ["bash"]
+ENTRYPOINT ["/td"]
