@@ -1,6 +1,7 @@
 #!/bin/bash 
 
 function main(){
+clear
 echo -e "
 1.启动ToolDelta
 2.安装pip库"
