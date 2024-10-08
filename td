@@ -1,29 +1,36 @@
 #!/bin/bash 
-echo "开始检测ToolDelta更新" 
-tdv="$(curl http://222.187.254.86:5244/d/ToolDelta-Basic/ToolDelta/main/version)" 
-function da(){
-gitclone="https://github.dqyt.online/https://github.com/"
-until curl "$gitclone/ToolDelta-Basic/ToolDelta/releases/download/$tdv/ToolDelta-linux">ToolDelta;do
-  echo "下载失败，5秒后切换镜像源"
-  sleep 5
-  ((N++))
-  case "$N" in
-    1)gitclone="https://github.moeyy.xyz/https://github.com/";;
-    2)echo "你的网络似乎有什么问题呢？请稍后重新尝试吧";EXIT_FAILURE;;
-    *)gitclone="https://github.com/";N=0
-  esac
-done
-chmod +x ./ToolDelta
+
+function main(){
+echo -e "
+1.启动ToolDelta
+2.安装pip库"
+read -p "请输入相对应的序列号数字:" num
+case "${num}" in
+	0)
+	clear
+    echo -e "感谢使用！欢迎下次再来！"
+	;;
+	1)
+	clear
+	python -c "from tooldelta.launch_options import client_title; client_title()"
+	;;
+	2)
+	clear
+	pipinstall
+	;;
+esac
 }
-if [ ! -d "./ToolDelta" ];then
-echo "开始下载ToolDelta"
-da
+function pipinstall() {
+read -p "请输要安装的库名" pipanz
+pip install $pipanz
+main
+}
+if [ -e "/workspace/pip" ]
+then
+   main
+else
+   echo "ToolDelta不存在"
+   echo "开始安装ToolDelta"
+   pip install ToolDelta
+   main
 fi
-if [ "$tdv" -ne "$(./ToolDelta -v)" ]; then
-echo "发现最新版本，开始更新"
-da
-echo "ToolDelta更新完成" 
-fi
-echo "ToolDelta已经是最新版本" 
-echo "ToolDelta 启动!" 
-./ToolDelta
