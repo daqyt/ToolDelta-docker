@@ -1,5 +1,5 @@
 #!/bin/bash 
-
+sleep 5
 function main(){
 clear
 echo -e "
