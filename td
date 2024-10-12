@@ -66,7 +66,7 @@ case "${num}" in
 	pipinstall
 	;;
 	*)
-	clean_print "5 - ${DARK_RED}不合法的启动模式:${RESET}"
+	clean_print "${DARK_RED}不合法的启动模式:${RESET}"
 	exit 1
         ;;
 esac
