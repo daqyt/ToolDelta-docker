@@ -21,16 +21,21 @@ TOOLDELTA_LOGO="\
 ║${DARK_BLUE}   ╚═╝    ╚═════╝  ╚═════╝ ╚══════╝${LIGHT_BLUE}╚═════╝ ╚══════╝╚══════╝╚═╝   ╚═╝  ╚═╝${RESET}║
 ╚═════════════════════════════════════════════════════════════════════════╝${RESET}"
 
+clean_print() {
+    echo -e "$1"
+}
+
 function main(){
 clear
-echo -e "
-1 - 启动 ToolDelta
-2 - 打开 ToolDelta 插件管理器
-3 - 打开 ToolDelta 插件市场
-4 - 修改 ToolDelta 启动配置
-5 - 开启 ToolDelta 直接启动模式
-6 - 安装pip库"
-read -p "请输入相对应的序列号数字:" num
+clean_print "$TOOLDELTA_LOGO"
+clean_print "${GREEN}请选择启动模式${YELLOW}(使用启动参数 -l <启动模式> 可以跳过该页面):${RESET}"
+clean_print "1 - ${LIGHT_BLUE}启动 ToolDelta${RESET}"
+clean_print "2 - ${DARK_PURPLE}打开 ToolDelta 插件管理器${RESET}"
+clean_print "3 - ${DARK_PURPLE}打开 ToolDelta 插件市场${RESET}"
+clean_print "4 - ${GREEN}修改 ToolDelta 启动配置${RESET}"
+clean_print "5 - ${DARK_RED}开启 ToolDelta 直接启动模式${RESET}"
+clean_print "6 - ${DARK_BLUE}安装pip库${RESET}"
+read -p "请选择：" num
 case "${num}" in
 	0)
 	clear
@@ -60,6 +65,10 @@ case "${num}" in
 	clear
 	pipinstall
 	;;
+	*)
+	clean_print "5 - ${DARK_RED}不合法的启动模式:${RESET}"
+	exit 1
+        ;;
 esac
 }
 function pipinstall() {
