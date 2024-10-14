@@ -79,5 +79,6 @@ main
 if [ -e "/workspace/快速启动.sig" ]
 then
    python -c "from tooldelta.launch_options import client_title; client_title()"
+  exit 1
 fi
 main
