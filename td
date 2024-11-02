@@ -66,7 +66,7 @@ case "${num}" in
 	;;
         6)
 	clear
-	python -c "from tooldelta.launch_options import client_title; client_title()" -l 5
+	python -c "from tooldelta.launch_options import client_title; client_title()" -l 6
 	;;
 	7)
 	clear
