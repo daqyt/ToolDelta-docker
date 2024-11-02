@@ -72,10 +72,6 @@ case "${num}" in
 	clear
 	pipinstall
 	;;
-        7)
-        clear
-        pipinstall
-        ;;
         q)
         clean_print "${GREEN}ToolDelta 已退出.${RESET}"
         exit 0
