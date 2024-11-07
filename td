@@ -37,7 +37,7 @@ clean_print "4 - ${YELLOW}初始化所有插件配置${RESET}"
 clean_print "5 - ${GREEN}修改启动配置${RESET}"
 clean_print "6 - ${DARK_RED}开启直接启动模式${RESET}"
 clean_print "7 - ${DARK_BLUE}安装pip库${RESET}"
-clean_print "q - ${GRAY}退出"
+clean_print "q - ${GRAY}退出${RESET}"
 read -p "请选择：" num
 case "${num}" in
 	0)
